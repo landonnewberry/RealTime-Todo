@@ -7,6 +7,11 @@ const addTodo = (value) => ({
     completed: false
 });
 
+const removeTodo = (id) => ({
+    type: 'REMOVE_TODO',
+    id
+});
+
 const loadInitialTodos = (values) => ({
     type: 'LOAD_INITIAL_TODOS',
     values
@@ -19,5 +24,7 @@ const toggleTodo = (id) => ({
 
 module.exports = {
     addTodo,
-    loadInitialTodos
+    loadInitialTodos,
+    toggleTodo,
+    removeTodo
 };

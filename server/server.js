@@ -15,8 +15,6 @@ const io = socketServer(server);
 
 server.listen(8000, () => console.log("Server running on port 8000"));
 
-
-
 const store = configureStore();
 
 io.on('connect', (socket) => {
@@ -37,6 +35,16 @@ io.on('connect', (socket) => {
             value: action.value,
             completed: action.completed
         });
+    });
+
+    socket.on('TOGGLE_TODO', (id) => {
+        store.dispatch(todosActions.toggleTodo(id));
+        io.emit('TOGGLE_TODO', id);
+    });
+
+    socket.on('REMOVE_TODO', (id) => {
+        store.dispatch(todosActions.removeTodo(id));
+        io.emit('REMOVE_TODO', id);
     });
     
 });

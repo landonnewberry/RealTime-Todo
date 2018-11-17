@@ -6,3 +6,13 @@ export const addTodoLocal = (value, id = v4(), completed = false) => ({
     value,
     completed: completed
 });
+
+export const toggleTodoLocal = (id) => ({
+    type: 'TOGGLE_TODO',
+    id
+});
+
+export const removeTodoLocal = (id) => ({
+    type: 'REMOVE_TODO',
+    id
+});
