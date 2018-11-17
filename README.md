@@ -1,5 +1,6 @@
 # RealTime-Todo
 React/Redux client with Express/Redux/Socket.io server.
+![](http://landonnewberry.com/RealTime-Todo.gif)
 
 ## Setup
 Clone the repository and navigate to the root directory:
